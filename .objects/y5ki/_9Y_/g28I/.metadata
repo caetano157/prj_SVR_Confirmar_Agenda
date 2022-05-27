@@ -1,0 +1,15 @@
+﻿{
+  "Id": "g28Iq7yYOU6A6h1AdH2uUA",
+  "Reference": "Xea2SY_7iUmHtEjBooocZg/g28Iq7yYOU6A6h1AdH2uUA",
+  "ParentRef": "Xea2SY_7iUmHtEjBooocZg/_9Y_RpEPSk-jQaK0dvjZ7w",
+  "Name": "Tela - Satis",
+  "Type": "Screen",
+  "Created": "2022-03-15T21:33:30.112252Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2022-03-22T22:54:26.3909352Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=21.10.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

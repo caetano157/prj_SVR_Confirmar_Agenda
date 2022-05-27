@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-16"?>
+<TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="IDzoh7lHEE-aFWWFQXKiYQ" Selector="&lt;html app='chrome.exe' title='Satis'/&gt;" Url="https://satis.bodylaser.com.br/" xmlns="http://schemas.uipath.com/workflow/activities/uix">
+  <imageRef attrName="IconBase64" xmlns="">08KEY9yufQUaxVY3teWXncg</imageRef>
+  <imageRef attrName="InformativeScreenshot" originalValue="7b8de61520b0dc6d518b36e503f91aec.png" xmlns="">0fn5hKgRIRECBkUDM8gI5vw</imageRef>
+</TargetApp>
