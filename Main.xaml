@@ -193,28 +193,16 @@
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download Agenda" sap:VirtualizedContainerService.HintSize="589.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Smart\sq_Download_Agenda.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                    <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="si:FileInfo" x:Key="arg_outStrArquivo">
-                                    <mva:VisualBasicReference x:TypeArguments="si:FileInfo" ExpressionText="var_strFilePath" />
-                                  </OutArgument>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                  <OutArgument x:TypeArguments="si:FileInfo" x:Key="arg_outStrArquivo">[var_strFilePath]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Tratativa Arquivo" sap:VirtualizedContainerService.HintSize="589.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Excel\sq_Tratativa_Arquivo.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="arg_inStrFilePath">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="var_strFilePath.FullName" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                    <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="arg_inStrUnidade">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Unidade&quot;).ToString" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="arg_outDtAgenda">
-                                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="var_dtAgenda" />
-                                  </OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="arg_inStrFilePath">[var_strFilePath.FullName]</InArgument>
+                                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="arg_inStrUnidade">[CurrentRow("Unidade").ToString]</InArgument>
+                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="arg_outDtAgenda">[var_dtAgenda]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <If Condition="[var_dtOutput is Nothing]" DisplayName="If - Verifica se inicia ou se realiza o Merge" sap:VirtualizedContainerService.HintSize="589.6,293.6" sap2010:WorkflowViewState.IdRef="If_6">
@@ -248,7 +236,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEachRow>
-                      <ui:WriteRange AddHeaders="True" DataTable="[var_dtOutput]" DisplayName="Write Range - Execução" sap:VirtualizedContainerService.HintSize="664.8,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[Config(&quot;OutputFolder&quot;).ToString &amp; DateTime.Now.ToString(&quot;yyyy-MM-dd/&quot;) &amp; DateTime.Now.ToString(&quot;yyyy-MM-dd/&quot;) &amp; &quot;.xlsx&quot;]">
+                      <ui:WriteRange AddHeaders="True" DataTable="[var_dtOutput]" DisplayName="Write Range - Execução" sap:VirtualizedContainerService.HintSize="664.8,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="[&quot;Data/Temp/&quot; &amp; DateTime.Now.ToString(&quot;yyyy-MM-dd&quot;) &amp; &quot;.xlsx&quot;]">
                         <ui:WriteRange.StartingCell>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -604,13 +592,13 @@
                   <Transition.To>
                     <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Processa o item atual, e verifica se houve alguma exceção, caso positivo, segue o fluxo no qual a exeção se encaixa" DisplayName="Process" sap:VirtualizedContainerService.HintSize="250.4,158.4" sap2010:WorkflowViewState.IdRef="State_3">
                       <State.Entry>
-                        <Sequence sap:VirtualizedContainerService.HintSize="475.2,604" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <Sequence sap:VirtualizedContainerService.HintSize="478.4,753.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Process Transaction" sap:VirtualizedContainerService.HintSize="433.6,511.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                          <TryCatch DisplayName="Try Process Transaction" sap:VirtualizedContainerService.HintSize="436.8,660.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -659,10 +647,10 @@
                               </Sequence>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,323.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -670,7 +658,7 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Handle Business Exception" sap:VirtualizedContainerService.HintSize="304,252.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <Sequence DisplayName="Handle Business Exception" sap:VirtualizedContainerService.HintSize="304,249.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -696,7 +684,7 @@
                                   </Sequence>
                                 </ActivityAction>
                               </Catch>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -707,7 +695,7 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Handle System Exception" sap:VirtualizedContainerService.HintSize="304,352.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                  <Sequence DisplayName="Handle System Exception" sap:VirtualizedContainerService.HintSize="304,349.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
