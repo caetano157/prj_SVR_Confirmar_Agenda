@@ -1,0 +1,1 @@
+Olá *{Paciente}*\nSua consulta de: {Dia}\nEstá marcada para às: {Horario}
